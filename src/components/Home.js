@@ -1,6 +1,15 @@
 import React from 'react'
+import {useJsApiLoader, GoogleMap , useLoadScript, Marker } from '@react-google-maps/api'
 
 const Home = () => {
+
+  const {isLoaded} = useLoadScript({
+    googleMapsApiKey: "AIzaSyB_ymPemf83-gcA2GPd2aKCZSSIBuWk25Q",
+  })
+
+  if(!isLoaded){
+    return <div>Loading...</div>
+  }
   return (
     <>
       <div className="  w-full h-screen mt-[110px]">
@@ -38,8 +47,10 @@ const Home = () => {
                 </div>
         </div>
         <div className='bg-[#E5E5E5] md:w-1/2 '>
-            <div>
-                
+            <div id="googlemap">
+              <GoogleMap zoom={10} center={{lat: 44, lng: -80}} className='w-96 h-96'>
+
+              </GoogleMap>
             </div>
         </div>
       </div>
