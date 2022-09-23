@@ -12,22 +12,7 @@ const Home = () => {
   // }
 
 
-const options = {
-	method: 'GET',
-	headers: {
-		'Content-Type': 'application/json',
-		'X-RapidAPI-Key': '475873e768msh090c0c54a274a74p1cbcebjsn4f9ad7563d9f',
-		'X-RapidAPI-Host': 'distance-calculator.p.rapidapi.com'
-	}
-};
 
-fetch('https://distance-calculator.p.rapidapi.com/distance/simple?lat_1=47.373535&long_1=8.541109&lat_2=42.335321&long_2=-71.023516&unit=miles&decimal_places=2', options)
-	.then(response => response.json())
-  // console.log("data",response)
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-
-  console.log("data",options)
 
 
   return (
